@@ -7,6 +7,6 @@ services:
       context: .
       dockerfile: Dockerfile
     volumes:
-      - /home/nietzchan/Documents/VvvebJs:/var/www/html       
+      - .:/var/www/html       
     ports:
       - 8080:80
