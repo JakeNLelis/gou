@@ -1,12 +1,14 @@
-# sudo apt install docker-compose
-# sudo docker-compose up -d
-# version: '3.8'
+version: '3.8'  # Ensure this version matches your Docker Compose version
+
 services:
   php:
     build:
       context: .
       dockerfile: Dockerfile
     volumes:
-      - .:/var/www/html       
+      - ./path/to/code:/var/www/html
     ports:
-      - 8080:80
+      - "8080:80"
+    environment:
+      - APACHE_RUN_USER=1000
+      - APACHE_RUN_GROUP=1001
